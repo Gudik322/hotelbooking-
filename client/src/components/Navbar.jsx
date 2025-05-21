@@ -91,7 +91,7 @@ const Navbar = () => {
         <img
           src={assets.searchIcon}
           alt="search"
-          className={`${isScrolled && invert} h-7 transition-all duration-500`}
+          className={`${isScrolled && "invert"} h-7 transition-all duration-500`}
         />
 
         {user ? (
