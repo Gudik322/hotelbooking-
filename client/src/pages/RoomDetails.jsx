@@ -48,7 +48,7 @@ const RoomDetails = () => {
               className="w-full rounded-xl shadow-lg object-cover"
             />
           </div>
-          <div className="grid grid-cols-2 gap-4 lg:flex-row gap-6 ">
+          <div className="grid grid-cols-2 lg:flex-row gap-6 ">
             {room?.images.length > 1 &&
               room.images.map((image, index) => (
                 <img
