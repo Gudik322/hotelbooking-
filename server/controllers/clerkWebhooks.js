@@ -17,7 +17,7 @@ const clerkWebhooks = async () =>{
         // Getting Data from request body
         const {data, type} = req.body
 
-        const userDate = {
+        const userData= {
             _id: data.id,
             email: data.email_addresses[0].email_address,
             username: data.first_name + " " + data.last_name,
@@ -28,7 +28,7 @@ const clerkWebhooks = async () =>{
 
         switch (type) {
             case "user.created": {
-                await User.create(userDate)
+                await User.create(userData)
                 break;
             }
               case "user.updated": {
