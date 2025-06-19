@@ -1,5 +1,6 @@
-import User from "../models/User.js";
 import { Webhook } from "svix";
+import User from "../models/User.js";
+
 
 const clerkWebhooks = async (req, res) => {
   try {
@@ -11,6 +12,7 @@ const clerkWebhooks = async (req, res) => {
       "svix-timestamp": req.headers["svix-timestamp"],
       "svix-signature": req.headers["svix-signature"],
     };
+    
     // Verifying Headers
     await whook.verify(JSON.stringify(req.body), headers);
 
@@ -49,5 +51,6 @@ const clerkWebhooks = async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 };
+
 
 export default clerkWebhooks;
