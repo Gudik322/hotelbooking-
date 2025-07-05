@@ -19,10 +19,6 @@ useEffect(() => {
   }
 }, [rooms, searchedCities]);
 
-console.log("rooms", rooms);
-console.log("searchedCities", searchedCities);
-console.log("recommended", recommended);
-
   return (
     recommended.length > 0 && (
       <div className="flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20">

@@ -38,7 +38,7 @@ export const AppProvider = ({children}) =>{
             if(data.success){
                 setIsOwner(data.role === "hotelOwner");
                 setSearchedCities(data.recentSearchedCities)
-                console.log("Fetched recentSearchedCities", data.recentSearchedCities);
+                
             } else{
                 // Retry fetching user details after 5 second 
                 setTimeout(()=>{
