@@ -7,7 +7,7 @@ const Dashboard = () => {
 
   const { currency, user, getToken, toast, axios} = useAppContext();
 
-  const [dasboardData, setDasboardData] = useState({
+  const [dashboardData, setDashboardData] = useState({
     bookings: [],
     totalBookings: 0,
     totalRevenue: 0,
@@ -15,9 +15,9 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () =>{
     try {
-      const { data } = await axios.get("/api/booking/hotel", {headers: { Authorization: `Bearer ${await getToken()}` }})
+      const { data } = await axios.get("/api/bookings/hotel", {headers: { Authorization: `Bearer ${await getToken()}` }})
       if(data.success){
-        setDasboardData(data.dasboardData)
+        setDashboardData(data.dashboardData)
       } else {
         toast.error(data.message)
       }
@@ -52,7 +52,7 @@ const Dashboard = () => {
           <div>
             <p className="text-blue-500 text-lg">Total Bookings</p>
             <p className="text-neutral-400 text-base text-center">
-              {dasboardData.totalBookings}
+              {dashboardData.totalBookings}
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ const Dashboard = () => {
           <div>
             <p className="text-blue-500 text-lg">Total Revenue</p>
             <p className="text-neutral-400 text-base text-center">
-              {currency} {dasboardData.totalRevenue}
+              {currency} {dashboardData.totalRevenue}
             </p>
           </div>
         </div>
@@ -92,7 +92,7 @@ const Dashboard = () => {
             </tr>
           </thead>
           <tbody className="text-sm">
-            {dasboardData.bookings.map((item, index) => (
+            {dashboardData.bookings.map((item, index) => (
               <tr key={index}>
                 <td className="py-3 px-3 text-gray-700 border-t border-gray-300">
                   {item.user.username}
