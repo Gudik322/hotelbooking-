@@ -13,7 +13,7 @@ import ListRoom from './pages/hotelOwner/ListRoom'
 import AddRoom from './pages/hotelOwner/AddRoom'
 import {Toaster} from 'react-hot-toast'
 import { useAppContext } from './conext/AppContext'
-import Loader from './components/loader'
+import Loader from './components/Loader'
 
 
 const App = () => {
